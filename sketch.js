@@ -1,14 +1,27 @@
 gamestate=1
 var crab1;
+
+function preload(){
+  groundImg = loadImage("stage-1.png")
+  cactiiImg = loadImage("cactii.png")
+  wood1 = loadImage("W1.png")
+}
+
+
 function setup() { 
   createCanvas(1300,500); 
  ground= createSprite(650, 500-20, 1300,40)
+ ground.addImage(groundImg)
+ ground.scale = 0.8;
+
  platform= createSprite(20, 335, 80, 250)
  player=createSprite(20,135,50,50)
  player.shapeColor="red"
 
  platform1= createSprite(190, 385, 80, 150)
- platform1.shapeColor="green"
+ platform1.addImage(wood1)
+ platform1.scale = 1;
+
  platform2= createSprite(320, 235, 80, 50)
  platform2.shapeColor="lime"
  platform3= createSprite(500, 385, 80, 150)
@@ -32,6 +45,9 @@ function setup() {
  coin6= createSprite(700, 480-70, 10,10)
 
  villian2=createSprite(830,180,10,40) //cactus
+ villian2.addImage(cactiiImg)
+ villian2.scale = 0.5;
+
  villian3=createSprite(1000,240,10,40)  //honeybee
  villian3.velocityX=3.8
 
